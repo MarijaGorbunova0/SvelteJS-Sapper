@@ -6,6 +6,7 @@ export async function post(req, res) {
 
         const response = await api.post('users/register', user);
 
+
         if (!response.errors && response.user) {
             if (!req.session) req.session = {};
             req.session.user = response.user;
